@@ -8,6 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/team/i;
       botRegexSC = /^\/sched/i;
       botRegexP = /^\/search/i;  botRegexTw = /^\/twitch/i;
+      botRegexRules = /^\/rules/i; 
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAX"
                 ,"BAL","LAC","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","LAR","CHI","CAR",
@@ -41,6 +42,12 @@ function respond() {
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
+    this.res.end();
+  } 
+  
+    else if(request.text && botRegexRules.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/1827x2250.jpeg.79859ec18cb14ec6b926f781ce2ffdd3.large"));
     this.res.end();
   } 
   
